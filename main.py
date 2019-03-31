@@ -17,10 +17,19 @@ perceptron.train(training_inputs, labels)
 
 print("Fornecendo testes")
 
-inputs = training_inputs[0]
-print("Tem que ativar", inputs)
+csv = np.genfromtxt("dataset.csv", delimiter=",")
+data_inputs = []
+for row in csv:
+    data_inputs.append(row)
+
+inputs = data_inputs[0]
+print("Tem que ativar")
 perceptron.predict(inputs) 
 
-print("Tem NOT ativar", inputs)
-inputs = training_inputs[1]
+inputs = data_inputs[1]
+print("Tem que ativar")
+perceptron.predict(inputs)
+
+print("Tem NOT ativar")
+inputs = data_inputs[2]
 perceptron.predict(inputs) 
