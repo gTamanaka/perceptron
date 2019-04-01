@@ -13,10 +13,10 @@ class Perceptron(object):
         summation = np.dot(inputs, self.weights) 
         if summation > 0:
           activation = 1
-          print("Perceptron activated")
+          print("Perceptron ativou")
         else:
           activation = -1            
-          print("Perceptron NOT activated")
+          print("Perceptron nao ativou")
         return activation
 
     def train(self, training_inputs, labels):
@@ -24,7 +24,6 @@ class Perceptron(object):
         for _ in range(self.threshold):
             for inputs, label in zip(training_inputs, labels):
                 prediction = self.predict(inputs)
-                print(self.weights)
                 self.weights += self.learning_rate * (label - prediction) * inputs
                 # self.weights[0] += self.learning_rate * (label - prediction)
         print("Terminando treinamento")

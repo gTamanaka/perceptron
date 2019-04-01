@@ -1,7 +1,7 @@
 import numpy as np
 from perceptron import Perceptron
 
-print("Running Perceptron")
+print("Inciando Perceptron")
 training_inputs = []
 csv = np.genfromtxt("models.csv", delimiter=",")
 for row in csv:
@@ -15,7 +15,7 @@ labels = np.array([1, -1, -1, -1])
 perceptron = Perceptron(64)
 perceptron.train(training_inputs, labels)
 
-print("Fornecendo testes")
+print("Testando modelo treinado contra o dataset novo")
 
 csv = np.genfromtxt("dataset.csv", delimiter=",")
 data_inputs = []
@@ -23,13 +23,13 @@ for row in csv:
     data_inputs.append(row)
 
 inputs = data_inputs[0]
-print("Tem que ativar")
+print("Perceptron deveria ativar")
 perceptron.predict(inputs) 
 
 inputs = data_inputs[1]
-print("Tem que ativar")
+print("Perceptron deveria ativar")
 perceptron.predict(inputs)
 
-print("Tem NOT ativar")
+print("Percceptron nao deve ativar")
 inputs = data_inputs[2]
 perceptron.predict(inputs) 
