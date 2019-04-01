@@ -10,7 +10,7 @@ for row in csv:
 print(training_inputs)
 
 
-labels = np.array([1, 0, 0, 0])
+labels = np.array([1, -1, -1, -1])
 
 perceptron = Perceptron(64)
 perceptron.train(training_inputs, labels)
